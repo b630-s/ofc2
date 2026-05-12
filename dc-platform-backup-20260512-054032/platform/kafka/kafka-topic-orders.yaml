@@ -1,0 +1,16 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: orders-raw
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: reference-kafka
+spec:
+  topicName: orders_raw
+  partitions: 1
+  replicas: 1
+  config:
+    cleanup.policy: delete
+    min.insync.replicas: 1
+    retention.ms: 86400000
+    segment.bytes: 1073741824

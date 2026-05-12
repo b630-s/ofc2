@@ -1,0 +1,57 @@
+replicaCount: 1
+
+image:
+  tag: 1.3.0-incubating
+
+serviceAccount:
+  create: false
+  name: polaris-sa
+
+persistence:
+  type: relational-jdbc
+  relationalJdbc:
+    secret:
+      name: polaris-persistence
+
+storage:
+  secret:
+    name: ~
+    awsAccessKeyId: ~
+    awsSecretAccessKey: ~
+
+authentication:
+  type: internal
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
+
+service:
+  type: ClusterIP
+
+managementService:
+  type: ClusterIP
+  clusterIP: None
+
+ingress:
+  enabled: false
+
+metrics:
+  enabled: true
+
+serviceMonitor:
+  enabled: true
+
+advancedConfig:
+  polaris.features.ALLOW_SETTING_S3_ENDPOINTS: "true"
+
+nodeSelector:
+  NodeGroupType: core
+
+tolerations: []
+
+affinity: {}

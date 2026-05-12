@@ -1,0 +1,27 @@
+watchNamespaces:
+  - kafka
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 384Mi
+  limits:
+    cpu: 500m
+    memory: 768Mi
+
+replicas: 1
+
+createGlobalResources: true
+
+operationTimeoutMs: 300000
+
+# Keep scheduling generic and portable
+nodeSelector:
+  NodeGroupType: core
+
+tolerations: []
+
+affinity: {}
+
+podDisruptionBudget:
+  enabled: false

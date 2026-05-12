@@ -1,0 +1,29 @@
+replicaCount: 1
+
+sparkJobNamespace: spark
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
+
+serviceAccounts:
+  spark:
+    create: false
+    name: spark-sa
+
+webhook:
+  enable: true
+
+metrics:
+  enable: true
+
+nodeSelector:
+  NodeGroupType: core
+
+tolerations: []
+
+affinity: {}
