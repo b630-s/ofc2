@@ -1,1 +1,0 @@
-cp -a /home/ubuntu/work/dc-platform "/mnt/c/Users/baljeet/Documents/projects/dc-platform-backup-$(date +%Y%m%d-%H%M%S)"

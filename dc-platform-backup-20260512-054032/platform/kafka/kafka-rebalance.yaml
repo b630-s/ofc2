@@ -1,3 +1,0 @@
-# Cruise Control is intentionally not part of the prototype reference baseline.
-# Rebalancing can be added later if Kafka is promoted from a tiny reference
-# cluster into a larger shared service.
